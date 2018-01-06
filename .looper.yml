@@ -14,7 +14,7 @@ flows:
     - call: versionsCheck
     - call: pr
   pr:
-    - call: init
+    #- call: init
     - echo "Running build for $GITHUB_PR_URL"
     - call: versionsCheck
     #- (name Maven build) mvn clean install
