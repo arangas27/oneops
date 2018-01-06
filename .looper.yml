@@ -6,7 +6,8 @@ triggers:
   - manual: Run default
 flows:
   init:
-    - sudo  yum install -y postgresql-devel.x86_64 
+    - sudo yum -y install gcc mysql-devel ruby-devel rubygems 
+    - sudo yum install -y postgresql-devel.x86_64 
     - sudo yum groupinstall 'Development Tools' 
     - sudo yum install libxml2-devel 
     - sudo yum install libxslt-devel
