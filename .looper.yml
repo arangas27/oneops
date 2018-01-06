@@ -6,10 +6,10 @@ triggers:
   - manual: Run default
 flows:
   init:
-    - yum install -y postgresql-devel.x86_64 
-    - yum groupinstall 'Development Tools' 
-    - yum install libxml2-devel 
-    - yum install libxslt-devel
+    - sudo  yum install -y postgresql-devel.x86_64 
+    - sudo yum groupinstall 'Development Tools' 
+    - sudo yum install libxml2-devel 
+    - sudo yum install libxslt-devel
   default:
     - call: versionsCheck
     - call: pr
