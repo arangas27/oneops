@@ -5,10 +5,16 @@ tools:
 triggers:
   - manual: Run default
 flows:
+  init:
+    - sudo yum install -y postgresql-devel.x86_64 
+    - sudo  yum groupinstall 'Development Tools' 
+    - sudo yum install libxml2-devel 
+    - sudo yum install libxslt-devel
   default:
     - call: versionsCheck
     - call: pr
   pr:
+    - call: init
     - echo "Running build for $GITHUB_PR_URL"
     - call: versionsCheck
     #- (name Maven build) mvn clean install
